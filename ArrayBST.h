@@ -1,4 +1,4 @@
-
+	
 #include "BST.h"
 
 
@@ -13,8 +13,8 @@ class ArrayBST : public BST {
 		
 	void add(int data);
 	void print();
-//	void preOrderTraversal();
-//	void preOrderTraversal(int data);
-//	bool search(int data);
-		
+//	void preOrderTraversal(int currentIndex);
+	bool search(int key);
+	int getLeftChild(int currentIndex);
+	int getRightChild(int currentIndex);
 };
