@@ -8,7 +8,7 @@ ArrayBST::ArrayBST(){
 	}
 	
 }
-
+// inserting data into the tree
 void ArrayBST::add(int data){
 	int currentIndex=0;
 	cout<<"Adding "<<data<<endl;
@@ -16,7 +16,7 @@ void ArrayBST::add(int data){
 	while(true){
 		if(element[currentIndex]== NULL){
 			element[currentIndex]=data;
-			cout<<"Inserted at Index "<<currentIndex<<endl;
+			cout<<"Inserted "<<data<<" at Index "<<currentIndex<<endl;
 			break;
 		}
 		
@@ -45,7 +45,7 @@ void ArrayBST::add(int data){
 }
 
 
-
+//searching data
 bool ArrayBST::search(int key){
 	int currentIndex=0;
 	cout<<"Searching "<<key<<endl;
@@ -71,23 +71,33 @@ bool ArrayBST::search(int key){
 	}
 }
 
-
+//getting left child
 	int ArrayBST:: getLeftChild(int currentIndex){
-		if(element[currentIndex]!=NULL && (2*currentIndex+1) < MAX_SIZE){
+		if((element[currentIndex]!=NULL) && ((2*currentIndex+1) <= MAX_SIZE)){
 			return 2*currentIndex+1;
 		
 		}
-		return -1;
+		else{
+			return -1;
+		}
 	}
-	
+
+//getting right child
 	
 	int ArrayBST:: getRightChild(int currentIndex){
-		if(element[currentIndex]!=NULL && (2*currentIndex+2) < MAX_SIZE){
-			return 2*currentIndex+2;
+		if((element[currentIndex]!=NULL) && ((2*currentIndex+2) <= MAX_SIZE)){
+			return (2*currentIndex+2);
 		
 		}
-		return -1;
+		else {
+			return -1;
+		}
+	
 	}
+	
+	
+	//preOrder traversal
+	
 /*void ArrayBST::preOrderTraversal(int currentIndex){
 	
 	
@@ -98,21 +108,33 @@ bool ArrayBST::search(int key){
         preOrderTraversal(getRightChild(currentIndex));
 		}
 	
-}
+} */
 
-*/
+
+void ArrayBST::preOrderTraversal(int currentIndex) {
+    if((currentIndex >= 0) && (element[currentIndex] != NULL)){
+    	
+       	cout << element[currentIndex]<<endl;
+		preOrderTraversal(getLeftChild(currentIndex));
+        preOrderTraversal(getRightChild(currentIndex));
+        
+        
+    }
+}
 
 
 
 ArrayBST::~ArrayBST(){}
 int main(){
 	ArrayBST a;
-	a.add(1);
-	a.add(2);
+	a.add(5);
 	a.add(3);
-	a.search(3);
+	a.add(7);
+	a.add(10);
+	a.add(6);
 	a.search(7);
-//	a.preOrderTraversal(3);
+	cout<<"Pre order Traversal:"<<endl;
+	a.preOrderTraversal(0);
 	
 	return 0;
 }

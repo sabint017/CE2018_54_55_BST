@@ -13,7 +13,7 @@ class ArrayBST : public BST {
 		
 	void add(int data);
 	void print();
-//	void preOrderTraversal(int currentIndex);
+	void preOrderTraversal(int currentIndex);
 	bool search(int key);
 	int getLeftChild(int currentIndex);
 	int getRightChild(int currentIndex);
