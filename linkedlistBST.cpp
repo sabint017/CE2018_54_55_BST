@@ -24,7 +24,7 @@ LinkedBST::~LinkedBST(){}
 void LinkedBST::add(int data){
 }
 
-void LinkedBST::preorderTraversal(){}
+
 
 bool LinkedBST::search(int data){}
 
@@ -96,7 +96,20 @@ void LinkedBST::preorderTraversal(node* root) {
   
     
     preorderTraversal(root->right); 
+}
+
+void LinkedBST::inorderTraversal(node* root){
+	if(!root)
+	return;
+	
+	inorderTraversal(root->left);
+	
+	cout<<root->data<<"\t";
+	
+	inorderTraversal(root->right);
+	
 }  
+
 
 
 int main(){
@@ -110,6 +123,11 @@ int main(){
 	s.add(&s.root,51);
 	cout<<"Preorder Traversal of the tree is"<<endl;
 	s.preorderTraversal(&s.root);
+	cout<<endl;
+	cout<<endl;
+	cout<<"Inorder Traversal of the tree is"<<endl;
+	s.inorderTraversal(&s.root);
+	cout<<endl;
 	cout<<endl;
 	
 	

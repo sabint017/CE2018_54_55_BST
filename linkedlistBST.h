@@ -19,7 +19,6 @@ class LinkedBST:public BST{
     node root;
     LinkedBST();
     ~LinkedBST();
-    void preorderTraversal();
     void preorderTraversal(node *root);
     void add(int data);
     void add(node *root,int data);
@@ -29,4 +28,5 @@ class LinkedBST:public BST{
     void max(node* root);
     int min();
     void min(node* root);
+    void inorderTraversal(node *root);
 };
