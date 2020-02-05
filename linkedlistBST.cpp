@@ -98,58 +98,20 @@ void LinkedBST::preorderTraversal(node* root) {
     preorderTraversal(root->right); 
 }  
 
-int LinkedBST::max(){
-}
-
-int LinkedBST::min(){
-	
-}
-
-void LinkedBST::max(node* root){
-	if(!root)
-		return;
-	
-
-	
-	if(root->right==NULL){
-		cout<<"the max is"<< root->data<<endl;
-	}
-	else{
-		max(root->right);
-	}
-
-	
-}
-
-void LinkedBST::min(node* root){
-	if(!root)
-	return;
-	
-	if(root->left==NULL){
-		cout<<"the min is"<<root->data<<endl;
-	}
-	else{
-		min(root->left);
-	}
-}
-
 
 int main(){
 	LinkedBST s;
 
-	s.add(&s.root,23);
-	s.add(&s.root,27);
-	s.add(&s.root,3);
-	s.add(&s.root,107);
-	s.add(&s.root,95);
-	s.add(&s.root,64);
+	s.add(&s.root,46);
+	s.add(&s.root,19);
+	s.add(&s.root,77);
+	s.add(&s.root,33);
+	s.add(&s.root,81);
+	s.add(&s.root,51);
 	cout<<"Preorder Traversal of the tree is"<<endl;
 	s.preorderTraversal(&s.root);
 	cout<<endl;
 	
-	s.max(&s.root);
-	s.min(&s.root);
-
 	
 	int number;
 	cout<<"Enter a number you want to search  in the tree"<<endl;

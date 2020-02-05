@@ -55,14 +55,14 @@ bool ArrayBST::search(int key){
 			cout<<"Key Not Found!"<<endl;
 			break;
 		}
-		if(key==element[currentIndex]){
+		else if(key==element[currentIndex]){
 			cout<<"Key  Found! at Index "<< currentIndex << endl;
 			break;
 		}
 		
 		else if(key>element[currentIndex]){
 			currentIndex=(2*currentIndex)+2;
-			
+				
 		}
 		else if(key < element[currentIndex]){
 			currentIndex=(2*currentIndex)+1;
@@ -95,20 +95,7 @@ bool ArrayBST::search(int key){
 	
 	}
 	
-	
-	//preOrder traversal
-	
-/*void ArrayBST::preOrderTraversal(int currentIndex){
-	
-	
-	if(element[currentIndex]!=NULL)
-    {	
-       	cout<<element[currentIndex]<<endl;
-        preOrderTraversal(getLeftChild(currentIndex));
-        preOrderTraversal(getRightChild(currentIndex));
-		}
-	
-} */
+
 
 
 void ArrayBST::preOrderTraversal(int currentIndex) {
@@ -146,6 +133,33 @@ int ArrayBST::max(){
 }
 
 
+//void ArrayBST::delete(int key){
+//	int currentIndex=0;
+//	
+//	for(currentIndex=0;currentIndex<MAX_SIZE-1;currentIndex++){
+//		
+//		if(element[currentIndex]==key){
+//			delete element[currentIndex];
+//		}
+//	}
+//}
+
+void ArrayBST::inOrderTraversal(int currentIndex) {
+    if((currentIndex >= 0) && (element[currentIndex] != NULL)){
+    	
+      
+		inOrderTraversal(getLeftChild(currentIndex));
+		cout << element[currentIndex]<<endl;
+        inOrderTraversal(getRightChild(currentIndex));
+        
+        
+    }
+}
+
+
+
+
+
  ArrayBST::~ArrayBST(){}
  
 int main(){
@@ -161,9 +175,13 @@ int main(){
 	a.add(16);
 
 
+
 	a.search(7);
 	cout<<"Pre order Traversal:"<<endl;
 	a.preOrderTraversal(0);
+	
+		cout<<"In order Traversal:"<<endl;
+	a.inOrderTraversal(0);
 	cout<<endl<<"Minm element is:" << a.min();
 	cout<<endl<<"Maxm element is:" << a.max();
 	
