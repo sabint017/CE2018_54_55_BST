@@ -12,6 +12,7 @@ class BST{
 		virtual void add(int data)=0;
 		virtual void preOrderTraversal(int index)=0;
 		virtual bool search(int data)=0;
+		virtual int min()=0;
 };
 
 #endif
