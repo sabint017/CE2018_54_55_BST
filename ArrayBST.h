@@ -2,7 +2,7 @@
 #include "BST.h"
 
 
-#define MAX_SIZE 10
+#define MAX_SIZE 100
 
 class ArrayBST : public BST {
 	private:
@@ -18,4 +18,5 @@ class ArrayBST : public BST {
 	int getLeftChild(int currentIndex);
 	int getRightChild(int currentIndex);
 	int min();
+	int max();
 };
