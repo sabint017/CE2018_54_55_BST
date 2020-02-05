@@ -101,6 +101,10 @@ void LinkedBST::preorderTraversal(node* root) {
 int LinkedBST::max(){
 }
 
+int LinkedBST::min(){
+	
+}
+
 void LinkedBST::max(node* root){
 	if(!root)
 		return;
@@ -115,6 +119,18 @@ void LinkedBST::max(node* root){
 	}
 
 	
+}
+
+void LinkedBST::min(node* root){
+	if(!root)
+	return;
+	
+	if(root->left==NULL){
+		cout<<"the min is"<<root->data<<endl;
+	}
+	else{
+		min(root->left);
+	}
 }
 
 
@@ -132,6 +148,7 @@ int main(){
 	cout<<endl;
 	
 	s.max(&s.root);
+	s.min(&s.root);
 
 	
 	int number;
