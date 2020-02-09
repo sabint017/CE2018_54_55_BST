@@ -20,7 +20,7 @@ class BST{
 		virtual int max()=0;
 		virtual bool search(int data)=0;
 		virtual int min()=0;
-//		virtual void deleteKey(int key)=0;
+		virtual void deleteKey(int key)=0;
 	
 };
 

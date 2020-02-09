@@ -12,7 +12,6 @@ class ArrayBST : public BST {
 		~ArrayBST();
 		
 	void add(int data);
-	void print();
 	void preOrderTraversal(int currentIndex);
 	void inOrderTraversal(int currentIndex);
 	bool search(int key);
@@ -20,6 +19,8 @@ class ArrayBST : public BST {
 	int getRightChild(int currentIndex);
 	int min();
 	int max();
-//	void deleteKey(int key);
+	void deleteKey(int key);
+	int returnIndex(int key);
+	int minNode(int index);
 
 };
