@@ -98,6 +98,13 @@ void LinkedBST::preorderTraversal(node* root) {
     preorderTraversal(root->right); 
 }
 
+void LinkedBST::preOrderTraversal(int index){
+}
+
+ void LinkedBST:: inOrderTraversal(int index){
+ 	
+ }
+
 void LinkedBST::inorderTraversal(node* root){
 	if(!root)
 	return;
@@ -110,6 +117,70 @@ void LinkedBST::inorderTraversal(node* root){
 	
 }  
 
+void LinkedBST::deleteKey(int key){
+	
+}
+
+void LinkedBST:: deleteKey(node *root,int key){
+	if(!root){
+		return;
+	}
+	if(key<root->data){
+		deleteKey(root->left,key);
+	}
+	else if(key>root->data){
+		deleteKey(root->right,key);
+	}
+	else if(key==root->data){
+		if(root->left == NULL && root->right == NULL) { 
+			delete root;
+			root = NULL;
+		}
+		else if(root->right==NULL){
+			root->left=root;
+		}
+		else if(root->left==NULL){
+			root->right=root;
+			
+		}
+		else{
+			node *nodeToDelete=new node();
+			nodeToDelete=root;
+			int largest;
+			largest=max(root);
+			nodeToDelete->data=largest;
+			deleteKey(nodeToDelete->left,largest);
+			
+		}
+	}
+
+}
+
+int LinkedBST:: min(){
+	
+}
+
+void LinkedBST::min(node* root){
+	if(!root->left){
+		cout<<"The smallest number is"<<root->data<<endl;
+	}
+	else{
+		min(root->left);
+	}
+}
+
+int LinkedBST:: max(){
+	
+}
+int LinkedBST:: max(node* root){
+	if(!root->right){
+		return root->data;
+	}
+	else{
+		 max(root->right);
+	}
+	
+}
 
 
 int main(){
@@ -130,8 +201,19 @@ int main(){
 	cout<<endl;
 	cout<<endl;
 	
+	s.min(&s.root);
+	int largest=s.max(&s.root);
+	cout<<"The largest is"<<largest<<endl;
+	
+	
+	
+	s.preorderTraversal(&s.root);
 	
 	int number;
+	cout<<"Enter a number you want to search  in the tree"<<endl;
+	cin>>number;
+	s.search(&s.root,number);
+	s.deleteKey(&s.root,19);
 	cout<<"Enter a number you want to search  in the tree"<<endl;
 	cin>>number;
 	s.search(&s.root,number);

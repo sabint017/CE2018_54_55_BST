@@ -20,13 +20,17 @@ class LinkedBST:public BST{
     LinkedBST();
     ~LinkedBST();
     void preorderTraversal(node *root);
+    void preOrderTraversal(int index);
     void add(int data);
     void add(node *root,int data);
     bool search(int data);
     bool search(node *root,int targetKey);
     int max();
-    void max(node* root);
+    int max(node* root);
     int min();
     void min(node* root);
+    void inOrderTraversal(int index);
     void inorderTraversal(node *root);
+    void deleteKey(int key);
+    void deleteKey(node *root,int key);
 };
