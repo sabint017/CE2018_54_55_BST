@@ -137,11 +137,16 @@ void LinkedBST:: deleteKey(node *root,int key){
 			root = NULL;
 		}
 		else if(root->right==NULL){
-			root->left=root;
+			node *temp=new node();
+			temp=root;
+			delete root;
+			root=temp->left;
 		}
 		else if(root->left==NULL){
-			root->right=root;
-			
+			node *temp=new node();
+			temp=root;
+			delete root;
+			root=temp->right;	
 		}
 		else{
 			node *nodeToDelete=new node();
